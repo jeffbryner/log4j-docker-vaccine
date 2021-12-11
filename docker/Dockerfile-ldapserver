@@ -1,0 +1,7 @@
+FROM maven:3-jdk-11 as buildldap
+WORKDIR /ldapserver
+RUN git clone https://github.com/mbechler/marshalsec.git .
+RUN mvn package -DskipTests
+COPY docker/start_ldapserver.sh /ldapserver/start_ldapserver.sh
+EXPOSE 1389
+

@@ -1,0 +1,7 @@
+FROM maven:3-jdk-11 as buildlogout
+WORKDIR /logout4shell
+RUN git clone https://github.com/Cybereason/Logout4Shell.git .
+RUN mvn package
+COPY docker/start_webserver.sh /logout4shell/start_webserver.sh
+EXPOSE 8080
+
