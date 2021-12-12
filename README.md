@@ -11,6 +11,8 @@ Clone this repo:
 git clone https://github.com/jeffbryner/log4j-docker-vaccine.git
 ```
 
+Edit the containers.env file to hold an accurate private or public IP/DNS that your target can access. The default entry likely won't work for you!
+
 Build and run the containers:
 
 ```bash
