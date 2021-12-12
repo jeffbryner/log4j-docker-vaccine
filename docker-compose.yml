@@ -22,3 +22,5 @@ services:
       - 1389:1389
     depends_on:
       - webserver
+    env_file:
+      - containers.env
