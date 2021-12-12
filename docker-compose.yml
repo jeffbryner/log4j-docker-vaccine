@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: ./docker/Dockerfile-webserver
     ports:
-      - 8080:8080
+      - 8000:8000
     volumes:
       #load local code and aws environment for development
       - "./:/app"
